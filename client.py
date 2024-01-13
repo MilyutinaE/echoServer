@@ -1,5 +1,6 @@
 import socket
 
+
 def send_request():
     server_host = '127.0.0.1'  # Адрес сервера
     server_port = 8090         # Порт сервера
@@ -24,6 +25,7 @@ User-Agent: MyClient
 
     # Закрываем соединение
     client_socket.close()
+
 
 if __name__ == "__main__":
     send_request()

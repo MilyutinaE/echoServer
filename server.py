@@ -38,6 +38,7 @@ def handle_request(client_socket):
     # Закрываем соединение с клиентом
     client_socket.close()
 
+
 with socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM) as server_socket:
     server_socket.bind(('127.0.0.1', 8090))
     server_socket.listen(1)
@@ -46,7 +47,6 @@ with socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM) as server_soc
     while True:
         client_socket, _ = server_socket.accept()
         handle_request(client_socket)
-
 
 """ server_socket.listen(1) - сервер будет принимать только одно активное соединение одновременно. Когда клиент 
 подключится, сервер примет его соединение и начнет обрабатывать запросы. Если другой клиент попытается подключиться в 
